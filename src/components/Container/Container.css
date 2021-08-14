@@ -1,0 +1,10 @@
+.container-component {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.children-container-component {
+  width: 1200px;
+  padding-top: 30px;
+}
