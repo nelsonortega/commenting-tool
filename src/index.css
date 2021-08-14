@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', 'Segoe UI', 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
