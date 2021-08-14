@@ -2,7 +2,7 @@ import './Container.css';
 import React from 'react';
 
 interface IContainerProps {
-  children: React.ReactChild
+  children: React.ReactNode
 }
 
 function Container(props: IContainerProps) {

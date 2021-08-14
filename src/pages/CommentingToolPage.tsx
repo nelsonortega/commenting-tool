@@ -1,13 +1,15 @@
 import React from 'react';
+import './CommentingToolPage.css';
+import TextArea from '../components/TextArea/TextArea';
 import Container from '../components/Container/Container';
-import './CommentSectionPage.css'
 
 function CommentingToolPage() {
   return (
     <Container>
-      <div className="commenting-tool-page">
+      <div className="page-title">
         Commentig Tool
       </div>
+      <TextArea />
     </Container>
   );
 }

@@ -1,0 +1,45 @@
+.textarea-container {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  flex-direction: column;
+}
+
+.comment-textarea {
+  font-family: inherit;
+  font-size: 15px;
+  height: 80px;
+  width: 85%;
+  outline: none;
+  padding: 1%;
+  resize: none;
+  border-width: 1px;
+  border-color: lightgrey;
+  border-style: solid solid none solid;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  width: 85%;
+  padding: 0.5% 1%;
+  border-style: none solid solid solid;
+  border-width: 1px;
+  border-color: lightgrey;
+  background-color: lightgrey;
+  border-radius: 0px 0px 4px 4px;
+}
+
+.send-comment-button {
+  background-color: grey;
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 5px 20px;
+  font-size: 16px;
+}
+
+.send-comment-button:hover {
+  cursor: pointer;
+}
