@@ -1,0 +1,27 @@
+.comment-username {
+  font-weight: bold;
+  margin: 10px 0px;
+}
+
+.separator-line {
+  width: 2px;
+  background-color: lightgray;
+  margin: 0px 12px;
+}
+
+.main-content-container {
+  display: flex;
+}
+
+.comment-reply-container {
+  width: 100%;
+}
+
+.comment-reply-button {
+  border: none;
+  color: grey;
+  background-color: white;
+  padding: 10px 0px;
+  font-size: 15px;
+  cursor: pointer;
+}

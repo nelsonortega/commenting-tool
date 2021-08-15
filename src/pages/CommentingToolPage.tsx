@@ -1,20 +1,17 @@
+import React from 'react';
 import './CommentingToolPage.css';
-import React, { useContext } from 'react';
 import TextArea from '../components/TextArea/TextArea';
-import CommentContext from '../context/CommentContext';
 import Container from '../components/Container/Container';
+import CommentSection from '../components/CommentSection/CommentSection';
 
-function CommentingToolPage() {
-  const { comments } = useContext(CommentContext)
-
-  console.log(comments)
-  
+function CommentingToolPage() {  
   return (
     <Container>
       <div className="page-title">
         Commentig Tool
       </div>
       <TextArea />
+      <CommentSection />
     </Container>
   );
 }

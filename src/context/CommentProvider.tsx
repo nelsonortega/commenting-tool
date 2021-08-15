@@ -10,8 +10,10 @@ const CommentProvider = (props: ICommentProviderProps) => {
   const [replies, setReplies] = useState<Array<IReply>>([])
 
   const addNewComment = (user: string, content: string) => {
+    const commentID = Date.now()
+
     const newComment: IComment = {
-      id: 'id',
+      id: `ID:${commentID}`,
       content: content,
       user: user
     }
@@ -22,8 +24,10 @@ const CommentProvider = (props: ICommentProviderProps) => {
   }
 
   const addNewReply = (user: string, content: string, parentId: string) => {
+    const replyID = Date.now()
+
     const newReply: IReply = {
-      id: 'id',
+      id: `ID:${replyID}`,
       content: content,
       user: user,
       parentId: parentId
