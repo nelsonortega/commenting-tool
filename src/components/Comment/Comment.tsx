@@ -46,7 +46,7 @@ function Comment(props: ICommentProps) {
                 key={comment.id}
                 user={comment.user} 
                 content={comment.content} 
-                avatarColor={props.avatarColor}
+                avatarColor={comment.avatarColor}
               />
             )
           })}
