@@ -36,6 +36,12 @@
   border-radius: 20px;
   padding: 5px 20px;
   font-size: 16px;
+  margin-left: 15px;
+}
+
+.alert {
+  color: red;
+  font-weight: bold;
 }
 
 .send-comment-button:hover {
