@@ -1,4 +1,5 @@
 import { ReactChild, useState } from "react"
+import { truncateLongWords } from "../../utils/StringUtils"
 import { ICurrentUser } from "../CurrentUser/CurrentUserContext"
 import CommentContext, { IComment, ICommentContext, IReply } from "./CommentContext"
 
@@ -15,7 +16,7 @@ const CommentProvider = (props: ICommentProviderProps) => {
 
     const newComment: IComment = {
       id: `ID:${commentID}`,
-      content: content,
+      content: truncateLongWords(content),
       user: currentUser.user,
       avatarColor: currentUser.avatarColor
     }
@@ -30,7 +31,7 @@ const CommentProvider = (props: ICommentProviderProps) => {
 
     const newReply: IReply = {
       id: `ID:${replyID}`,
-      content: content,
+      content: truncateLongWords(content),
       user: currentUser.user,
       avatarColor: currentUser.avatarColor,
       parentId: parentId
