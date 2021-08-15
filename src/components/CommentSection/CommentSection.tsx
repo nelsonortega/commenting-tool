@@ -11,6 +11,7 @@ function CommentSection() {
       {comments.map(comment => {
         return (
           <Comment 
+            id={comment.id}
             key={comment.id}
             user={comment.user} 
             content={comment.content} 

@@ -2,16 +2,27 @@ import './TextArea.css';
 import CommentContext from '../../context/CommentContext';
 import React, { ChangeEvent, useContext, useState } from 'react';
 
-function TextArea() {
+interface ITextAreaProps {
+  parentId?: string
+  closeReply?: () => void
+}
+
+function TextArea(props: ITextAreaProps) {
   const [comment, setComment] = useState<string>('')
-  const { addComment } = useContext(CommentContext)
+  const { addComment, addReply } = useContext(CommentContext)
 
   const setTextAreaValue = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value)
   }
 
   const sendComment = () => {
-    addComment('user', comment)
+    if (props.parentId && props.closeReply) {
+      addReply('user', comment, props.parentId)
+      props.closeReply()
+    } else {
+      addComment('user', comment)
+    }
+
     setComment('')
   }
 

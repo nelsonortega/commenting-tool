@@ -1,5 +1,6 @@
 .textarea-container {
   width: 100%;
+  min-width: 200px;
 }
 
 .comment-textarea {
