@@ -1,7 +1,7 @@
 import './CommentSection.css'
 import Comment from '../Comment/Comment';
 import React, { useContext } from 'react';
-import CommentContext from '../../context/CommentContext';
+import CommentContext from '../../context/Comment/CommentContext';
 
 function CommentSection() {
   const { comments } = useContext(CommentContext)
@@ -15,6 +15,7 @@ function CommentSection() {
             key={comment.id}
             user={comment.user} 
             content={comment.content} 
+            avatarColor={comment.avatarColor}
           />
         )
       })}

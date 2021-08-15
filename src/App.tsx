@@ -1,11 +1,14 @@
 import React from 'react';
-import CommentProvider from './context/CommentProvider';
 import CommentingToolPage from './pages/CommentingToolPage';
+import CommentProvider from './context/Comment/CommentProvider';
+import CurrentUserProvider from './context/CurrentUser/CurrentUserProvides';
 
 function App() {
   return (
     <CommentProvider>
-      <CommentingToolPage />
+      <CurrentUserProvider>
+        <CommentingToolPage />
+      </CurrentUserProvider>
     </CommentProvider>
   );
 }

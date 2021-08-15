@@ -1,13 +1,15 @@
 import './Comment.css';
+import Avatar from '../Avatar/Avatar';
 import TextArea from '../TextArea/TextArea';
 import React, { useContext, useState } from 'react';
-import CommentContext from '../../context/CommentContext';
+import CommentContext from '../../context/Comment/CommentContext';
 import ShowComponent from '../ShowComponent/ShowComponent';
 
 interface ICommentProps {
   id: string
   user: string
   content: string
+  avatarColor: string
 }
 
 function Comment(props: ICommentProps) {
@@ -25,9 +27,7 @@ function Comment(props: ICommentProps) {
 
   return (
     <React.Fragment>
-      <div className={'comment-username'}>
-        {props.user}
-      </div>
+      <Avatar user={props.user} avatarColor={props.avatarColor}/>
       <div className={'main-content-container'}>
         <div className={'separator-line'}></div>
         <div className={'comment-reply-container'}>
@@ -46,6 +46,7 @@ function Comment(props: ICommentProps) {
                 key={comment.id}
                 user={comment.user} 
                 content={comment.content} 
+                avatarColor={props.avatarColor}
               />
             )
           })}

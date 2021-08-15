@@ -1,6 +1,7 @@
 import './TextArea.css';
-import CommentContext from '../../context/CommentContext';
 import React, { ChangeEvent, useContext, useState } from 'react';
+import CommentContext from '../../context/Comment/CommentContext';
+import CurrentUserContext from '../../context/CurrentUser/CurrentUserContext';
 
 interface ITextAreaProps {
   parentId?: string
@@ -10,6 +11,7 @@ interface ITextAreaProps {
 function TextArea(props: ITextAreaProps) {
   const [comment, setComment] = useState<string>('')
   const { addComment, addReply } = useContext(CommentContext)
+  const { currentUser } = useContext(CurrentUserContext)
 
   const setTextAreaValue = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value)
@@ -17,10 +19,10 @@ function TextArea(props: ITextAreaProps) {
 
   const sendComment = () => {
     if (props.parentId && props.closeReply) {
-      addReply('user', comment, props.parentId)
+      addReply(currentUser, comment, props.parentId)
       props.closeReply()
     } else {
-      addComment('user', comment)
+      addComment(currentUser, comment)
     }
 
     setComment('')
