@@ -1,8 +1,8 @@
 import './TextArea.css';
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
+import Alert from '../Alert/Alert';
+import React, { ChangeEvent, useContext, useState } from 'react';
 import CommentContext from '../../context/Comment/CommentContext';
 import CurrentUserContext from '../../context/CurrentUser/CurrentUserContext';
-import ShowComponent from '../ShowComponent/ShowComponent';
 
 interface ITextAreaProps {
   parentId?: string
@@ -15,20 +15,6 @@ function TextArea(props: ITextAreaProps) {
 
   const [comment, setComment] = useState<string>('')
   const [showAlert, setShowAlert] = useState<boolean>(false)
-
-  useEffect(() => {
-    let timeout: NodeJS.Timeout
-
-    if (showAlert) {
-      timeout = setTimeout(() => {
-        setShowAlert(false)
-      }, 3000)
-    }
-
-    return () => {
-      clearTimeout(timeout)
-    }
-  }, [showAlert])
 
   const setTextAreaValue = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(event.target.value)
@@ -60,9 +46,11 @@ function TextArea(props: ITextAreaProps) {
         placeholder="Write a comment!"
       />
       <div className="button-container">
-        <ShowComponent show={showAlert}> 
-          <label className="alert">Comment can't be empty!</label> 
-        </ShowComponent>
+        <Alert 
+          showAlert={showAlert}
+          setShowAlert={setShowAlert}
+          message={"Comment can't be empty!"}
+        />
         <button 
           className="send-comment-button"
           onClick={sendComment}

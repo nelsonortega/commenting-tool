@@ -1,3 +1,24 @@
 .current-user-container {
   margin-bottom: 40px;
 }
+
+.change-user-button {
+  border: none;
+  color: grey;
+  margin-left: 10px;
+  background-color: white;
+  padding: 10px 0px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.user-input {
+  margin-top: 10px;
+  font-family: inherit;
+  font-size: 15px;
+  height: 10px;
+  outline: none;
+  padding: 1%;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}

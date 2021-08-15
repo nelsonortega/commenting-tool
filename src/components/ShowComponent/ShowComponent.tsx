@@ -2,7 +2,7 @@ import React from 'react'
 
 interface IShowComponentProps {
   show: boolean
-  children: React.ReactChild
+  children: React.ReactNode
 }
 
 function ShowComponent(props: IShowComponentProps) {
