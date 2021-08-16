@@ -1,7 +1,16 @@
+.separator-line-container {
+  width: 40px;
+  cursor: pointer;
+}
 
+.separator-line-container:hover > .separator-line {
+  width: 6px;
+}
 
 .separator-line {
+  height: 100%;
   width: 2px;
+  min-height: 15px;
   background-color: lightgray;
   margin: 0px 19px;
 }
