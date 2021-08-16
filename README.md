@@ -17,3 +17,6 @@ It will install all the dependencies for the project
 ### `yarn start`
 
 This will start the project, you will be able to access it through http://localhost:3000
+
+## Showing app functionality
+![App](/src/assets/app.gif)
