@@ -7,7 +7,7 @@ interface ICurrentUserProviderProps {
 
 const CurrentUserProvider = (props: ICurrentUserProviderProps) => {
   const [currentUser, setCurrentUser] = useState<ICurrentUser>({
-    user: 'Nelson',
+    user: 'Default User',
     avatarColor: 'lightblue'
   })
 

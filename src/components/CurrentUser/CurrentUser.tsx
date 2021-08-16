@@ -1,9 +1,9 @@
 import './CurrentUser.css'
+import Alert from '../Alert/Alert';
 import Avatar from '../Avatar/Avatar';
 import ShowComponent from '../ShowComponent/ShowComponent';
 import React, { ChangeEvent, useContext, useState } from 'react';
 import CurrentUserContext from '../../context/CurrentUser/CurrentUserContext';
-import Alert from '../Alert/Alert';
 
 function CurrentUser() {
   const { currentUser, updateUser } = useContext(CurrentUserContext)
@@ -11,10 +11,16 @@ function CurrentUser() {
   const [showAlert, setShowAlert] = useState<boolean>(false)
   const [newUser, setNewUser] = useState<string>(currentUser.user)
   const [isUserEditing, setIsUserEditing] = useState<boolean>(false)
+  const [avatarColor, setAvatarColor] = useState<string>(currentUser.avatarColor)
 
+  const availableColors = ['lightblue', 'lightcoral', 'lightgreen', 'lightsteelblue']
 
   const setNewUserValue = (event: ChangeEvent<HTMLInputElement>) => {
     setNewUser(event.target.value)
+  }
+
+  const setAvatarColorValue = (event: ChangeEvent<HTMLSelectElement>) => {
+    setAvatarColor(event.target.value)
   }
 
   const saveNewUser = () => {
@@ -24,7 +30,7 @@ function CurrentUser() {
       return 
     }
 
-    updateUser(newUser, currentUser.avatarColor)
+    updateUser(newUser, avatarColor)
     setShowAlert(false)
     switchToEditUser()
   }
@@ -43,9 +49,24 @@ function CurrentUser() {
       <ShowComponent show={isUserEditing}>
         <div className={'edit-user-container'}>
           Editing: 
-          <div>
+          <div className={'select-input-container'}>
+            <select 
+              value={avatarColor} 
+              className={'select-avatar-color'} 
+              style={{backgroundColor: `${avatarColor}`}} 
+              onChange={setAvatarColorValue}
+            >
+              {availableColors.map(color =>
+                <option 
+                  key={color} 
+                  value={color}
+                  style={{backgroundColor: `${color}`}} 
+                />
+              )}
+            </select>
             <input 
               type="text" 
+              maxLength={20}
               value={newUser} 
               className={'user-input'}
               onChange={setNewUserValue}

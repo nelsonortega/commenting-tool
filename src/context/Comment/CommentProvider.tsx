@@ -22,7 +22,7 @@ const CommentProvider = (props: ICommentProviderProps) => {
     }
 
     setComments(comments => {
-      return [...comments, newComment]
+      return [newComment, ...comments]
     })
   }
 
@@ -38,7 +38,7 @@ const CommentProvider = (props: ICommentProviderProps) => {
     }
 
     setReplies(replies => {
-      return [...replies, newReply]
+      return [newReply, ...replies]
     })
   }
 

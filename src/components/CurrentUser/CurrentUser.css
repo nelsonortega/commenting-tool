@@ -12,8 +12,22 @@
   cursor: pointer;
 }
 
-.user-input {
+.select-input-container {
+  display: flex;
   margin-top: 10px;
+  align-items: center;
+}
+
+.select-avatar-color {
+  width: 50px;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+  margin-right: 10px;
+  height: 40px;
+}
+
+.user-input {
   font-family: inherit;
   font-size: 15px;
   height: 10px;

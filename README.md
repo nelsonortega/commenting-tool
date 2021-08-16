@@ -6,6 +6,10 @@ Code Challenge that consited on creating a little commenting tool, where users c
 
 First, make sure that you have installed the latest version of NodeJS.
 
+### `npm install --global yarn`
+
+Install yarn to manage the packages
+
 ### `yarn`
 
 It will install all the dependencies for the project
