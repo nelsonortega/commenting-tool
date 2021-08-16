@@ -11,6 +11,10 @@ interface IAlertProps {
 function Alert(props: IAlertProps) {
   const { showAlert, setShowAlert} = props
 
+  /*
+   * useEffect that creates a timeout to
+   * hide the error alert after 3 seconds 
+   */
   useEffect(() => {
     let timeout: NodeJS.Timeout
 

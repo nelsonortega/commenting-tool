@@ -27,8 +27,13 @@ function TextArea(props: ITextAreaProps) {
       return 
     }
 
+    /*
+     * If we receive a parentID as prop, it means the we are
+     * replying to a comment, so we have to follow a diferent logic
+     */
     if (props.parentId && props.closeReply) {
       addReply(currentUser, comment, props.parentId)
+      // Here we hide the textarea from the parent component
       props.closeReply()
     } else 
       addComment(currentUser, comment)

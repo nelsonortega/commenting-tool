@@ -18,6 +18,10 @@ function Comment(props: ICommentProps) {
 
   const { replies } = useContext(CommentContext)
 
+  /*
+   * Filtering all the replies from the context
+   * to get the specific ones for each comment
+   */
   const commentReplies = replies.filter(reply =>
     reply.parentId === props.id
   )

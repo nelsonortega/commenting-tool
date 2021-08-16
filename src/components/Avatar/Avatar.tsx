@@ -7,6 +7,7 @@ interface IAvatarProps {
 }
 
 function Avatar(props: IAvatarProps) {
+  // We extract the first letter of the user to use it as its avatar
   const avatarLetter = props.user.charAt(0).toUpperCase()
 
   return (
