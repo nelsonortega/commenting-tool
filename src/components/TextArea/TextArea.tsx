@@ -16,9 +16,8 @@ function TextArea(props: ITextAreaProps) {
   const [comment, setComment] = useState<string>('')
   const [showAlert, setShowAlert] = useState<boolean>(false)
 
-  const setTextAreaValue = (event: ChangeEvent<HTMLTextAreaElement>) => {
+  const setTextAreaValue = (event: ChangeEvent<HTMLTextAreaElement>) =>
     setComment(event.target.value)
-  }
 
   const sendComment = () => {
     if (!comment.trim()) {

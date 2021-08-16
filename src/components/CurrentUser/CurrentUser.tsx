@@ -15,13 +15,11 @@ function CurrentUser() {
 
   const availableColors = ['lightblue', 'lightcoral', 'lightgreen', 'lightsteelblue']
 
-  const setNewUserValue = (event: ChangeEvent<HTMLInputElement>) => {
+  const setNewUserValue = (event: ChangeEvent<HTMLInputElement>) =>
     setNewUser(event.target.value)
-  }
 
-  const setAvatarColorValue = (event: ChangeEvent<HTMLSelectElement>) => {
+  const setAvatarColorValue = (event: ChangeEvent<HTMLSelectElement>) =>
     setAvatarColor(event.target.value)
-  }
 
   const saveNewUser = () => {
     if (!newUser.trim()) {
@@ -35,9 +33,8 @@ function CurrentUser() {
     switchToEditUser()
   }
 
-  const switchToEditUser = () => {
+  const switchToEditUser = () =>
     setIsUserEditing(prevState => !prevState)
-  }
 
   return (
     <div className={'current-user-container'}>

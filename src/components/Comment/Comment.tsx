@@ -26,13 +26,11 @@ function Comment(props: ICommentProps) {
     reply.parentId === props.id
   )
 
-  const showOrHideReplyTextArea = () => {
+  const showOrHideReplyTextArea = () =>
     setShowReplyTextArea(prevState => !prevState)
-  }
 
-  const showOrHideReplies = () => {
+  const showOrHideReplies = () => 
     setShowReplies(prevState => !prevState)
-  }
 
   return (
     <React.Fragment>

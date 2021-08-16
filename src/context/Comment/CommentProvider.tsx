@@ -21,9 +21,9 @@ const CommentProvider = (props: ICommentProviderProps) => {
       avatarColor: currentUser.avatarColor
     }
 
-    setComments(comments => {
-      return [newComment, ...comments]
-    })
+    setComments(comments =>
+      [newComment, ...comments]
+    )
   }
 
   const addNewReply = (currentUser: ICurrentUser, content: string, parentId: string) => {
@@ -37,9 +37,9 @@ const CommentProvider = (props: ICommentProviderProps) => {
       parentId: parentId
     }
 
-    setReplies(replies => {
-      return [newReply, ...replies]
-    })
+    setReplies(replies =>
+      [newReply, ...replies]
+    )
   }
 
   const commentsValue: ICommentContext = {
